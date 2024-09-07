@@ -51,14 +51,14 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "app/**/*.{js,jsx,ts,tsx}": [
       "prettier --write --loglevel=warn",
       "eslint --fix --quiet"
     ],
-    "src/**/*.{css,less,sass,scss}": [
+    "app/**/*.{css,less,sass,scss}": [
       "stylelint --fix --quiet"
     ],
-    "src/**/*.{html,json,gql,graphql}": [
+    "app/**/*.{html,json,gql,graphql}": [
       "prettier --write --loglevel=error"
     ]
   },
