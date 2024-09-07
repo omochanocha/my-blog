@@ -3,12 +3,14 @@
     "next/core-web-vitals",
     "next/typescript",
     "eslint:recommended",
-    "prettier",
-    "plugin:tailwindcss/recommended"
+    "standard-with-typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
+    "prettier"
   ],
   "plugins": ["import", "unused-imports", "tailwindcss"],
   "rules": {
-    "semi": "error",
+    // "semi": "error",
     "no-var": "error",
     "sort-imports": 0,
     "no-unused-vars": "off",
@@ -18,7 +20,32 @@
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "object", "type", "index"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "{react,react-dom/**}",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "{[A-Z]*,**/[A-Z]*}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "./*.{css,scss,sass,less}",
+            "group": "index",
+            "position": "after"
+          }
+        ],
         "newlines-between": "always",
         "pathGroupsExcludedImportTypes": ["builtin"],
         "alphabetize": { "order": "asc", "caseInsensitive": true }
