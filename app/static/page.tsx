@@ -8,7 +8,7 @@ export default async function StaticPage(): Promise<JSX.Element> {
   // ページの生成された時間を取得
   const time = new Date().toLocaleString();
 
-  if (!contents || contents.length === 0) {
+  if (contents == null || contents.length === 0) {
     return <h1>No contents</h1>;
   }
 

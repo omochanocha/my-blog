@@ -12,11 +12,11 @@ export type Blog = {
   eyecatch?: MicroCMSImage;
 } & MicroCMSDate;
 
-if (!process.env['MICROCMS_SERVICE_DOMAIN']) {
+if (process.env['MICROCMS_SERVICE_DOMAIN'] == null) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
 
-if (!process.env['MICROCMS_API_KEY']) {
+if (process.env['MICROCMS_API_KEY'] == null) {
   throw new Error('MICROCMS_API_KEY is required');
 }
 

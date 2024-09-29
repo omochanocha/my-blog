@@ -33,7 +33,7 @@ export default async function StaticDetailPage({
   // ページの生成された時間を取得
   const time = new Date().toLocaleString();
 
-  if (!post) {
+  if (post == null) {
     notFound();
   }
 
