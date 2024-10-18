@@ -5,7 +5,12 @@ import { getDetail, getList } from '../../../libs/microcms';
 
 /**
  * この関数があるとstatic renderingになる
- * @returns
+ * @returns 返り値は次のようになる
+ * const paths = [
+ *  {postId: "1"},
+ *  {postId: "2"},
+ *  {postId: "abc3"}
+ * ]
  */
 export async function generateStaticParams(): Promise<
   {
