@@ -14,7 +14,8 @@ export default async function StaticPage(): Promise<JSX.Element> {
 
   return (
     <div>
-      <h1>{time}</h1>
+      <h1>記事一覧ページ</h1>
+      <h2>{time}</h2>
       <ul>
         {contents.map((post) => {
           return (
