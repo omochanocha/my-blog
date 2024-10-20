@@ -51,12 +51,17 @@ export default async function StaticDetailPage({
     notFound();
   }
 
+  if (post.category == null) {
+    return <p></p>;
+  }
+
   return (
     <div>
       <h1>記事詳細ページ</h1>
       <p>{postId}</p>
       <h2>{post.title}</h2>
       <h2>{time}</h2>
+      <p>{post.category.name}</p>
       <div>{parse(post.content)}</div>
     </div>
   );

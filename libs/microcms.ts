@@ -1,8 +1,11 @@
-// libs/microcms.ts
-
 import { createClient } from 'microcms-js-sdk';
 
 import type { MicroCMSQueries, MicroCMSImage, MicroCMSDate } from 'microcms-js-sdk';
+
+export type Category = {
+  id: string;
+  name: string;
+} & MicroCMSDate;
 
 //ブログの型定義
 export type Blog = {
@@ -10,6 +13,7 @@ export type Blog = {
   title: string;
   content: string;
   eyecatch?: MicroCMSImage;
+  category?: Category;
 } & MicroCMSDate;
 
 if (process.env['MICROCMS_SERVICE_DOMAIN'] == null) {
