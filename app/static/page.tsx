@@ -13,18 +13,20 @@ export default async function StaticPage(): Promise<JSX.Element> {
   }
 
   return (
-    <div>
+    <div className="grid justify-items-center">
       <h1>記事一覧ページ</h1>
       <h2>{time}</h2>
-      <ul>
-        {contents.map((post) => {
-          return (
-            <li key={post.id}>
-              <Link href={`/static/${post.id}`}>{post.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="mx-auto max-w-4xl">
+        <ul>
+          {contents.map((post) => {
+            return (
+              <li key={post.id}>
+                <Link href={`/static/${post.id}`}>{post.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
