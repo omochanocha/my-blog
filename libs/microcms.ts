@@ -1,6 +1,12 @@
 import { createClient } from 'microcms-js-sdk';
 
-import type { MicroCMSQueries, MicroCMSImage, MicroCMSDate } from 'microcms-js-sdk';
+import type {
+  MicroCMSQueries,
+  MicroCMSImage,
+  MicroCMSDate,
+  MicroCMSListResponse,
+  MicroCMSContentId,
+} from 'microcms-js-sdk';
 
 export type Category = {
   id: string;
@@ -31,7 +37,7 @@ export const client = createClient({
 });
 
 // ブログ一覧を取得
-export const getList = async (queries?: MicroCMSQueries) => {
+export const getList = async (queries?: MicroCMSQueries): Promise<MicroCMSListResponse<Blog>> => {
   const listData = await client.getList<Blog>({
     endpoint: 'blogs',
     ...(queries && { queries }),
@@ -44,7 +50,10 @@ export const getList = async (queries?: MicroCMSQueries) => {
 };
 
 // ブログの詳細を取得
-export const getDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+export const getDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries,
+): Promise<Blog & MicroCMSDate & MicroCMSContentId> => {
   const detailData = await client.getListDetail<Blog>({
     endpoint: 'blogs',
     contentId,
