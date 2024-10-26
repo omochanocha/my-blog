@@ -8,13 +8,13 @@ import type {
   MicroCMSContentId,
 } from 'microcms-js-sdk';
 
-export type Category = {
+type Category = {
   id: string;
   name: string;
 } & MicroCMSDate;
 
 //ブログの型定義
-export type Blog = {
+type Blog = {
   id: string;
   title: string;
   content: string;
