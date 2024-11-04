@@ -5,7 +5,7 @@ import { getDetail, getList } from '../../../libs/microcms';
 
 /**
  * この関数があるとstatic renderingになる
- * @returns 返り値は次のようになる
+ * @returns は次のようになる
  * const paths = [
  *  {postId: "1"},
  *  {postId: "2"},
@@ -51,7 +51,7 @@ export default async function StaticDetailPage({
     notFound();
   }
 
-  if (post.category == null) {
+  if (post?.category == null) {
     return <p></p>;
   }
 
@@ -59,10 +59,10 @@ export default async function StaticDetailPage({
     <div>
       <h1>記事詳細ページ</h1>
       <p>{postId}</p>
-      <h2>{post.title}</h2>
+      <h2>{post?.title}</h2>
       <h2>{time}</h2>
-      <p>{post.category.name}</p>
-      <div>{parse(post.content)}</div>
+      <p>{post?.category.name}</p>
+      <div>{parse(post?.content)}</div>
     </div>
   );
 }
