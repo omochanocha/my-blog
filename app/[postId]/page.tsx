@@ -57,7 +57,7 @@ const Page = async ({
   }
 
   return (
-    <div className="mx-auto max-w-5xl text-slate-800">
+    <div className="mx-auto h-screen max-w-5xl text-slate-800">
       <h1>記事詳細ページ</h1>
       <p>{postId}</p>
       <h2>{post?.title}</h2>
