@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { getList } from '../../libs/microcms';
 
-export default async function ArticleList(): Promise<JSX.Element> {
+export const ArticleList = async (): Promise<JSX.Element> => {
   const { contents } = await getList();
 
   if (contents == null || contents.length === 0) {
@@ -19,7 +19,7 @@ export default async function ArticleList(): Promise<JSX.Element> {
               <Link href={`/${post.id}`} className="">
                 <Image
                   src={post.eyecatch?.url ?? ''}
-                  alt="aaa"
+                  alt="アイキャッチ画像"
                   width={post.eyecatch?.width}
                   height={post.eyecatch?.height}
                 />
@@ -31,4 +31,4 @@ export default async function ArticleList(): Promise<JSX.Element> {
       </ul>
     </div>
   );
-}
+};
