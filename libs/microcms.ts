@@ -1,26 +1,12 @@
 import { createClient } from 'microcms-js-sdk';
 
+import type { Blog } from '../types/blog';
 import type {
   MicroCMSQueries,
-  MicroCMSImage,
   MicroCMSDate,
   MicroCMSListResponse,
   MicroCMSContentId,
 } from 'microcms-js-sdk';
-
-type Category = {
-  id: string;
-  name: string;
-} & MicroCMSDate;
-
-//ブログの型定義
-type Blog = {
-  id: string;
-  title: string;
-  content: string;
-  eyecatch?: MicroCMSImage;
-  category?: Category;
-} & MicroCMSDate;
 
 if (process.env['MICROCMS_SERVICE_DOMAIN'] == null) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');

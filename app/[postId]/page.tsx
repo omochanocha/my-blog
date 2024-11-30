@@ -1,8 +1,7 @@
-import parse from 'html-react-parser';
 import { notFound } from 'next/navigation';
 
 import { getDetail, getList } from '../../libs/microcms';
-import styles from '../page.module.css';
+import PostDetail from '../components/PostDetail';
 
 /**
  * この関数があるとstatic renderingになる
@@ -45,27 +44,11 @@ const Page = async ({
   // const { postId } = params;
   const post = await getDetail(postId);
 
-  // ページの生成された時間を取得
-  const time = new Date().toLocaleString();
-
   if (post == null) {
     notFound();
   }
 
-  if (post?.category == null) {
-    return <p></p>;
-  }
-
-  return (
-    <div className="mx-auto h-screen max-w-5xl text-slate-800">
-      <h1>記事詳細ページ</h1>
-      <p>{postId}</p>
-      <h2>{post?.title}</h2>
-      <h2>{time}</h2>
-      <p>{post?.category.name}</p>
-      <div className={styles['prose']}>{parse(post?.content)}</div>
-    </div>
-  );
+  return <PostDetail post={post} />;
 };
 
 export default Page;
