@@ -11,11 +11,11 @@ export const ArticleList = async (): Promise<JSX.Element> => {
   }
 
   return (
-    <div className="mt-8 grid justify-items-center">
-      <ul className="mx-auto grid max-w-5xl grid-cols-3 gap-4">
+    <div className="grid justify-items-center">
+      <ul className="mx-auto grid max-w-5xl grid-cols-3 gap-x-4 gap-y-10">
         {contents.map((post) => {
           return (
-            <li key={post.id} className="grid overflow-hidden rounded-lg bg-white drop-shadow-lg">
+            <li key={post.id} className="grid">
               <Link href={`/${post.id}`} className="">
                 <div>
                   <Image
@@ -25,7 +25,7 @@ export const ArticleList = async (): Promise<JSX.Element> => {
                     height={post.eyecatch?.height ?? 173}
                   />
                 </div>
-                <p className="text-slate-800">{post.title}</p>
+                <p className="text-slate-800 mt-2">{post.title}</p>
               </Link>
             </li>
           );
