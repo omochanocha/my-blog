@@ -1,10 +1,13 @@
 // import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 
 import { Header } from './components/Header';
 
 import type { Metadata } from 'next';
 
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
 // const geistSans = localFont({
 //   src: './fonts/GeistVF.woff',
@@ -28,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): JSX.Element {
   return (
-    <html lang="en">
-      <body className={'grid min-h-screen grid-rows-[max-content,1fr] text-zinc-800 antialiased'}>
+    <html lang="ja">
+      <body className={`${inter.variable} text-zinc-800 antialiased`}>
         <Header />
         {children}
       </body>
