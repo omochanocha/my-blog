@@ -15,8 +15,8 @@
 }
 
 body {
-  font-family: var(--font-inter), 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
-    'Hiragino Sans', Meiryo, sans-serif;
+  font-family: var(--font-inter), 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+    Meiryo, Arial, sans-serif;
 }
 
 @layer utilities {

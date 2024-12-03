@@ -26,11 +26,11 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
   return (
     <article className="mx-auto w-full max-w-5xl grow py-12 text-zinc-800">
       <h2 className="text-3xl font-bold">{post.title}</h2>
-      <div className="mt-16 flex gap-x-3">
+      <div className="mt-16 flex gap-x-3 text-gray-500">
         <h3>{formatter.format(utcDate_createdAt)}</h3>
         <h3>更新：{formatter.format(utcDate_updatedAt)}</h3>
       </div>
-      {post.category && <p className="mt-8">{post.category.name}</p>}
+      {post.category && <p className="mt-3">{post.category.name}</p>}
       <div className={`${styles['prose']} mt-20`}>{parse(post.content)}</div>
     </article>
   );
