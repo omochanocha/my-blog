@@ -3,6 +3,14 @@ import { createClient } from 'microcms-ts-sdk';
 import type { Category } from '../types/blog';
 import type { MicroCMSImage, MicroCMSQueries } from 'microcms-js-sdk';
 
+if (process.env['MICROCMS_SERVICE_DOMAIN'] == null) {
+  throw new Error('MICROCMS_SERVICE_DOMAIN is required');
+}
+
+if (process.env['MICROCMS_API_KEY'] == null) {
+  throw new Error('MICROCMS_API_KEY is required');
+}
+
 type Blog = {
   id: string;
   title: string;
@@ -18,8 +26,8 @@ interface Endpoints {
 }
 
 const client = createClient<Endpoints>({
-  serviceDomain: process.env['MICROCMS_SERVICE_DOMAIN'] as string,
-  apiKey: process.env['MICROCMS_API_KEY'] as string,
+  serviceDomain: process.env['MICROCMS_SERVICE_DOMAIN'],
+  apiKey: process.env['MICROCMS_API_KEY'],
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

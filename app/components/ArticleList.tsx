@@ -24,6 +24,7 @@ export const ArticleList = async (): Promise<JSX.Element> => {
                     alt="アイキャッチ画像"
                     width={post.eyecatch?.width ?? 330}
                     height={post.eyecatch?.height ?? 173}
+                    priority={true}
                   />
                 </div>
                 <p className="text-slate-800 mt-2">{post.title}</p>
