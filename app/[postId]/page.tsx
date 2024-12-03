@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import { getDetail, getList } from '../../libs/microcms';
-import PostDetail from '../components/PostDetail';
+import { ArticleDetail } from '../components/ArticleDetail';
 
 /**
  * この関数があるとstatic renderingになる
@@ -48,7 +48,7 @@ const Page = async ({
     notFound();
   }
 
-  return <PostDetail post={post} />;
+  return <ArticleDetail post={post} />;
 };
 
 export default Page;

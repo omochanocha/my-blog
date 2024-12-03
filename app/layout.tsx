@@ -32,7 +32,7 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="ja">
-      <body className={`${inter.variable} flex h-screen flex-col text-zinc-800 antialiased`}>
+      <body className={`${inter.variable} flex h-screen flex-col text-slate-700 antialiased`}>
         <Header />
         {children}
       </body>
