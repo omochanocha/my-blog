@@ -25,7 +25,7 @@ interface Endpoints {
   };
 }
 
-const client = createClient<Endpoints>({
+export const client = createClient<Endpoints>({
   serviceDomain: process.env['MICROCMS_SERVICE_DOMAIN'],
   apiKey: process.env['MICROCMS_API_KEY'],
 });
