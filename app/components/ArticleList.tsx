@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { getList } from '../../libs/microcms';
+// import { getList } from '../../libs/microcms';
+import { getListTS } from '../../libs/microcms-ts';
 
 export const ArticleList = async (): Promise<JSX.Element> => {
-  const { contents } = await getList();
+  const { contents } = await getListTS();
 
   if (contents == null || contents.length === 0) {
     return <h1>No contents</h1>;

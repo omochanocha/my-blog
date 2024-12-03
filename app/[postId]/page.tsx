@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 
-import { getDetail, getList } from '../../libs/microcms';
+// import { getDetail, getList } from '../../libs/microcms';
+import { getDetailTS, getListTS } from '../../libs/microcms-ts';
 import { ArticleDetail } from '../components/ArticleDetail';
 
 /**
@@ -19,7 +20,7 @@ export const generateStaticParams = async (): Promise<
 > => {
   // generateStaticParams関数内でfetchリクエストでコンテンツを取得した場合はそのリクエストは自動的にメモ化される
   // 今回は違う
-  const { contents } = await getList();
+  const { contents } = await getListTS();
 
   const paths = contents.map((post) => {
     return {
@@ -42,7 +43,7 @@ const Page = async ({
   params: { postId: string };
 }): Promise<React.JSX.Element> => {
   // const { postId } = params;
-  const post = await getDetail(postId);
+  const post = await getDetailTS(postId);
 
   if (post == null) {
     notFound();
