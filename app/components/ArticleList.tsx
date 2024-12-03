@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // import { getList } from '../../libs/microcms';
-import { getListTS } from '../../libs/microcms-ts';
+import { getList } from '../../libs/microcms-ts';
 
 export const ArticleList = async (): Promise<JSX.Element> => {
-  const { contents } = await getListTS();
+  const { contents } = await getList();
 
   if (contents == null || contents.length === 0) {
     return <h1>No contents</h1>;
@@ -27,7 +27,7 @@ export const ArticleList = async (): Promise<JSX.Element> => {
                     priority={true}
                   />
                 </div>
-                <p className="text-slate-800 mt-2">{post.title}</p>
+                <p className="mt-2 text-slate-800">{post.title}</p>
               </Link>
             </li>
           );
