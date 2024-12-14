@@ -30,7 +30,11 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
         <h3>{formatter.format(utcDate_createdAt)}</h3>
         <h3>更新：{formatter.format(utcDate_updatedAt)}</h3>
       </div>
-      {post.category && <p className="mt-3">{post.category.name}</p>}
+      {post.category && (
+        <div className="mt-3 flex items-center">
+          <p className="rounded border border-slate-600 px-2 py-1 text-sm">{post.category.name}</p>
+        </div>
+      )}
       <div className={`${styles['prose']} mt-20`}>{parse(post.content)}</div>
     </article>
   );
