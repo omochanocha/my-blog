@@ -1,8 +1,9 @@
 import React from 'react';
 
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser';
 
 import styles from '../page.module.css';
+import ParseAndHighlight from './ParseAndHighlight';
 
 import type { Blog } from '../../types/blog';
 
@@ -35,7 +36,8 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
           <p className="rounded border border-slate-600 px-2 py-1 text-sm">{post.category.name}</p>
         </div>
       )}
-      <div className={`${styles['prose']} mt-20`}>{parse(post.content)}</div>
+      {/* <div className={`${styles['prose']} mt-20`}>{parse(post.content)}</div> */}
+      <div className={`${styles['prose']} mt-20`}>{ParseAndHighlight(post.content)}</div>
     </article>
   );
 };
