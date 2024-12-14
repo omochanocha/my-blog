@@ -17,6 +17,7 @@
     "prepare": "npx simple-git-hooks || :"
   },
   "dependencies": {
+    "highlight.js": "^11.11.0",
     "html-react-parser": "^5.1.15",
     "microcms-js-sdk": "^3.1.2",
     "microcms-ts-sdk": "^1.2.0",
