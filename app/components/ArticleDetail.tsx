@@ -2,6 +2,8 @@ import React from 'react';
 
 // import parse from 'html-react-parser';
 
+import Link from 'next/link';
+
 import styles from '../page.module.css';
 import ParseAndHighlight from './ParseAndHighlight';
 
@@ -31,10 +33,27 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
         <h3>{formatter.format(utcDate_createdAt)}</h3>
         <h3>更新：{formatter.format(utcDate_updatedAt)}</h3>
       </div>
-      {post.category && (
+      {/* {post.category && (
         <div className="mt-3 flex items-center">
           <p className="rounded border border-slate-600 px-2 py-1 text-sm">{post.category.name}</p>
         </div>
+      )} */}
+      {post.categories && (
+        <ul className="mt-3 flex items-center gap-x-4">
+          {post.categories.map((category) => {
+            return (
+              <li key={category.id}>
+                <Link href={category.id}>
+                  <div>
+                    <p className="rounded border border-slate-600 px-2 py-1 text-sm">
+                      {category.name}
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       )}
       {/* <div className={`${styles['prose']} mt-20`}>{parse(post.content)}</div> */}
       <div className={`${styles['prose']} mt-20`}>{ParseAndHighlight(post.content)}</div>
