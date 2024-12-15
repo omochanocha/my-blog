@@ -3,8 +3,8 @@ import parse, { Element, Text } from 'html-react-parser';
 import HighlightCode from './HighlightCode';
 
 // 型ガード関数
-const isElement = (element: unknown): element is Element => element instanceof Element;
-const isText = (text: unknown): text is Text => text instanceof Text;
+const isElement = (element: unknown) => element instanceof Element;
+const isText = (text: unknown) => text instanceof Text;
 
 export default function ParseAndHighlight(rawHtml: string): string | JSX.Element | JSX.Element[] {
   return parse(rawHtml, {

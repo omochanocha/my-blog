@@ -1,8 +1,7 @@
 import hljs from 'highlight.js/lib/common';
 import parse from 'html-react-parser';
 
-// import styles from './HighlightCode.modue.scss'; // 詳細は省略
-import 'highlight.js/styles/lioshi.css';
+import 'highlight.js/styles/github-dark-dimmed.min.css';
 
 type Props = {
   hlc: {
@@ -12,8 +11,9 @@ type Props = {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default function HighlightCode({ hlc: { code, languageClass, dataFileName } }: Props) {
+export default function HighlightCode({
+  hlc: { code, languageClass, dataFileName },
+}: Props): JSX.Element {
   // microCMSから取得したクラス名を、言語名に整形
   const language = languageClass.replace('language-', '');
   const highlightCode = hljs.highlight(code, {
@@ -22,9 +22,11 @@ export default function HighlightCode({ hlc: { code, languageClass, dataFileName
   }).value;
 
   return (
-    <div>
-      <div>{dataFileName}</div>
-      <pre>
+    <div className="text-white">
+      <p className="inline-flex rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none">
+        {dataFileName}
+      </p>
+      <pre className="flex overflow-x-auto rounded-b-md rounded-se-md bg-blue-950 p-2">
         <code className={languageClass}>{parse(highlightCode)}</code>
       </pre>
     </div>
