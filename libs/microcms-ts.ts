@@ -1,7 +1,8 @@
 import { createClient } from 'microcms-ts-sdk';
 
 import type { Blog } from '../types/blog';
-import type { MicroCMSQueries } from 'microcms-js-sdk';
+// import type { MicroCMSQueries } from 'microcms-js-sdk';
+import type { MicroCMSGetListQueries } from 'microcms-ts-sdk';
 
 if (process.env['MICROCMS_SERVICE_DOMAIN'] == null) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
@@ -23,13 +24,17 @@ export const client = createClient<Endpoints>({
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const getList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList({ endpoint: 'blogs', ...queries });
+export const getList = async (queries?: MicroCMSGetListQueries<Endpoints>) => {
+  const listData = await client.getList({ endpoint: 'blogs', ...(queries && { queries }) });
   return listData;
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const getDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-  const detailDate = await client.getListDetail({ endpoint: 'blogs', contentId, ...queries });
+export const getDetail = async (contentId: string, queries?: MicroCMSGetListQueries<Endpoints>) => {
+  const detailDate = await client.getListDetail({
+    endpoint: 'blogs',
+    contentId,
+    ...(queries && { queries }),
+  });
   return detailDate;
 };

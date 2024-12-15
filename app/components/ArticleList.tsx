@@ -5,7 +5,9 @@ import Link from 'next/link';
 import { getList } from '../../libs/microcms-ts';
 
 export const ArticleList = async (): Promise<JSX.Element> => {
-  const { contents } = await getList();
+  const { contents } = await getList({ limit: 2 });
+
+  // console.log(contents);
 
   if (contents == null || contents.length === 0) {
     return <h1>No contents</h1>;
