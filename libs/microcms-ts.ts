@@ -1,6 +1,6 @@
 import { createClient } from 'microcms-ts-sdk';
 
-import type { Blog } from '../types/blog';
+import type { Blog, Category } from '../types/blog';
 // import type { MicroCMSQueries } from 'microcms-js-sdk';
 import type { MicroCMSGetListQueries } from 'microcms-ts-sdk';
 
@@ -15,6 +15,7 @@ if (process.env['MICROCMS_API_KEY'] == null) {
 interface Endpoints {
   list: {
     blogs: Blog;
+    categories: Category;
   };
 }
 
@@ -26,6 +27,12 @@ export const client = createClient<Endpoints>({
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const getList = async (queries?: MicroCMSGetListQueries<Endpoints>) => {
   const listData = await client.getList({ endpoint: 'blogs', ...(queries && { queries }) });
+  return listData;
+};
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const getListCategories = async (queries?: MicroCMSGetListQueries<Endpoints>) => {
+  const listData = await client.getList({ endpoint: 'categories', ...(queries && { queries }) });
   return listData;
 };
 

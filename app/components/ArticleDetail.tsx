@@ -43,7 +43,7 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
           {post.categories.map((category) => {
             return (
               <li key={category.id}>
-                <Link href={category.id}>
+                <Link href={`/categories/${category.id}`}>
                   <div>
                     <p className="rounded border border-slate-600 px-2 py-1 text-sm">
                       {category.name}
