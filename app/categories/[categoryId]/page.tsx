@@ -1,11 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { getList, getListCategories } from '../../../libs/microcms-ts';
+import { ArticleList } from '../../components/ArticleList';
+
+// キャッシュを利用しない(SSR)、> 1でstatic renderingになる
+// export const revalidate = 0;
 
 /**
- * この関数があるとstatic renderingになる
+ * この関数で動的ルーティング時のパスとなる文字列を生成している
  * @returns は次のようになる
  * const paths = [
  *  {categoryId: "1"},
@@ -49,30 +51,7 @@ const Page = async ({
     notFound();
   }
 
-  return (
-    <div className="grid justify-items-center">
-      <ul className="mx-auto grid max-w-5xl grid-cols-3 gap-x-4 gap-y-10">
-        {contents.map((post) => {
-          return (
-            <li key={post.id} className="grid">
-              <Link href={`/${post.id}`} className="">
-                <div>
-                  <Image
-                    src={post.eyecatch?.url ?? 'https://placehold.jp/660x346.png'}
-                    alt="アイキャッチ画像"
-                    width={post.eyecatch?.width ?? 330}
-                    height={post.eyecatch?.height ?? 173}
-                    priority={true}
-                  />
-                </div>
-                <p className="mt-2 text-slate-800">{post.title}</p>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
+  return <ArticleList contents={contents} />;
 };
 
 export default Page;

@@ -4,8 +4,11 @@ import { notFound } from 'next/navigation';
 import { getDetail, getList } from '../../libs/microcms-ts';
 import { ArticleDetail } from '../components/ArticleDetail';
 
+// キャッシュを利用しない(SSR)、> 1でstatic renderingになる
+// export const revalidate = 0;
+
 /**
- * この関数があるとstatic renderingになる
+ * この関数で動的ルーティング時のパスとなる文字列を生成している
  * @returns は次のようになる
  * const paths = [
  *  {postId: "1"},

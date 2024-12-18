@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Blog } from '../../types/blog';
+
 // import { getList } from '../../libs/microcms';
-import { getList } from '../../libs/microcms-ts';
 
-export const ArticleList = async (): Promise<JSX.Element> => {
-  const { contents } = await getList({ limit: 3 });
-
+export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
   if (contents == null || contents.length === 0) {
     return <p></p>;
   }
