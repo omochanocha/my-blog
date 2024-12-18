@@ -23,7 +23,7 @@ export default function HighlightCode({
 
   return (
     <div className="text-white">
-      <p className="inline-flex rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none">
+      <p className="flex max-w-fit rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none">
         {dataFileName}
       </p>
       <pre className="flex overflow-x-auto rounded-b-md rounded-se-md bg-blue-950 p-2">
