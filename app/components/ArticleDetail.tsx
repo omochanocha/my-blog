@@ -27,7 +27,7 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
   const utcDate_updatedAt = new Date(post.updatedAt);
 
   return (
-    <article className="mx-auto w-full max-w-5xl grow py-12 text-zinc-800">
+    <article className="mx-auto w-full max-w-5xl grow text-zinc-800">
       <h2 className="text-3xl font-bold">{post.title}</h2>
       <div className="mt-16 flex gap-x-3 text-gray-500">
         <h3>{formatter.format(utcDate_createdAt)}</h3>

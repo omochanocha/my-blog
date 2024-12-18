@@ -12,7 +12,7 @@ export const ArticleList = async (): Promise<JSX.Element> => {
   }
 
   return (
-    <div className="grid justify-items-center">
+    <div className="grid items-center justify-items-center">
       <ul className="mx-auto grid max-w-5xl grid-cols-3 gap-x-4 gap-y-10">
         {contents.map((post) => {
           return (
