@@ -7,7 +7,7 @@ type Props = {
   hlc: {
     code: string;
     languageClass: string;
-    dataFileName: string;
+    dataFileName: string | undefined;
   };
 };
 
@@ -16,17 +16,20 @@ export default function HighlightCode({
 }: Props): JSX.Element {
   // microCMSから取得したクラス名を、言語名に整形
   const language = languageClass.replace('language-', '');
-  const highlightCode = hljs.highlight(code, {
-    language: language,
-    ignoreIllegals: true,
-  }).value;
+  const highlightCode = language
+    ? hljs.highlight(code, { language, ignoreIllegals: true }).value
+    : hljs.highlightAuto(code).value;
+
+  const rounded = dataFileName != null ? 'rounded-b-md rounded-se-md' : 'rounded-md';
 
   return (
     <div className="text-white">
-      <p className="flex max-w-fit rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none">
-        {dataFileName}
-      </p>
-      <pre className="flex overflow-x-auto rounded-b-md rounded-se-md bg-blue-950 p-2">
+      {dataFileName != null && (
+        <p className="flex max-w-fit rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none">
+          {dataFileName}
+        </p>
+      )}
+      <pre className={`flex overflow-x-auto ${rounded} bg-blue-950 p-2`}>
         <code className={languageClass}>{parse(highlightCode)}</code>
       </pre>
     </div>
