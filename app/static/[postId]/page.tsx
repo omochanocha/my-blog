@@ -51,7 +51,7 @@ export default async function StaticDetailPage({
     notFound();
   }
 
-  if (post?.category == null) {
+  if (post?.categories == null) {
     return <p></p>;
   }
 
@@ -61,7 +61,7 @@ export default async function StaticDetailPage({
       <p>{postId}</p>
       <h2>{post?.title}</h2>
       <h2>{time}</h2>
-      <p>{post?.category.name}</p>
+      {/* <p>{post?.categories.name}</p> */}
       <div>{parse(post?.content)}</div>
     </div>
   );
