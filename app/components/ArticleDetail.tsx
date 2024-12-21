@@ -28,16 +28,11 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
 
   return (
     <article className="mx-auto w-full max-w-5xl grow text-zinc-800">
-      <h1 className="text-3xl font-bold">{post.title}</h1>
-      <div className="mt-16 flex gap-x-3 text-gray-500">
+      <h1 className="text-2xl font-bold md:text-3xl">{post.title}</h1>
+      <div className="mt-8 flex gap-x-3 text-gray-500 md:mt-16">
         <p>{formatter.format(utcDate_createdAt)}</p>
         <p>更新：{formatter.format(utcDate_updatedAt)}</p>
       </div>
-      {/* {post.category && (
-        <div className="mt-3 flex items-center">
-          <p className="rounded border border-slate-600 px-2 py-1 text-sm">{post.category.name}</p>
-        </div>
-      )} */}
       {post.categories && (
         <ul className="mt-3 flex items-center gap-x-4">
           {post.categories.map((category) => {
@@ -55,8 +50,7 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
           })}
         </ul>
       )}
-      {/* <div className={`${styles['prose']} mt-20`}>{parse(post.content)}</div> */}
-      <div className={`${styles['prose']} mt-20`}>{ParseAndHighlight(post.content)}</div>
+      <div className={`${styles['prose']} mt-14 md:mt-20`}>{ParseAndHighlight(post.content)}</div>
     </article>
   );
 };
