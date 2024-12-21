@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${inter.variable} flex h-screen flex-col text-slate-700 antialiased`}>
         <Header />
-        <main className="my-12 grid grow justify-items-center px-8">{children}</main>
+        <main className="my-12 grow px-4 md:grid md:justify-items-center md:px-8">{children}</main>
       </body>
     </html>
   );
