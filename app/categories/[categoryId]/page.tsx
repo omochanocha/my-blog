@@ -53,7 +53,29 @@ const Page: React.FC<Props> = async ({
     notFound();
   }
 
-  return <ArticleList contents={contents} />;
+  // TODO ここ理解できてない
+  const matchedContent = contents.find((content) =>
+    content.categories?.some((cat) => cat.id === categoryId),
+  );
+
+  // matchedContent が見つかった場合、その categories から id が一致するものをさらに探す
+  const matchedCategoryName = matchedContent
+    ? matchedContent.categories?.find((cat) => cat.id === categoryId)?.name
+    : '';
+
+  /*
+    contents:[
+      {categories: [{id: 1, name: "a"},{id: 2, name: "b"}]},
+      {categories: [{id: 1, name: "a"},{id: 2, name: "b"}]}
+    ]
+ */
+
+  return (
+    <div className="flex flex-col justify-center">
+      <p className="text-xl font-bold">{matchedCategoryName}</p>
+      <ArticleList contents={contents} />
+    </div>
+  );
 };
 
 export default Page;

@@ -9,7 +9,7 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
   }
 
   return (
-    <div className="grid justify-items-center md:items-center">
+    <div className="mt-8">
       <ul className="mx-auto grid max-w-5xl gap-x-4 gap-y-10 md:grid-cols-3">
         {contents.map((post) => {
           return (

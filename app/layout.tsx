@@ -20,7 +20,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
     <html lang="ja">
       <body className={`${inter.variable} flex h-screen flex-col text-slate-700 antialiased`}>
         <Header />
-        <main className="my-12 grow px-4 md:grid md:justify-items-center md:px-8">{children}</main>
+        <main className="my-12 grid grow px-4 md:justify-items-center md:px-8">{children}</main>
       </body>
     </html>
   );
