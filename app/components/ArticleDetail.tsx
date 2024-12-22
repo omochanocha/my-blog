@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import Link from 'next/link';
 
@@ -21,8 +21,8 @@ const options = {
 const formatter = new Intl.DateTimeFormat('ja-JP', options);
 
 export const ArticleDetail: React.FC<Props> = ({ post }) => {
-  const utcDate_createdAt = new Date(post.createdAt);
-  const utcDate_updatedAt = new Date(post.updatedAt);
+  const utcDate_createdAt = useMemo(() => new Date(post.createdAt), [post.createdAt]);
+  const utcDate_updatedAt = useMemo(() => new Date(post.updatedAt), [post.updatedAt]);
 
   return (
     <article className="mx-auto w-full max-w-5xl grow text-zinc-800">
