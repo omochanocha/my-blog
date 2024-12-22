@@ -34,17 +34,19 @@ export const generateStaticParams = async (): Promise<
   return [...paths];
 };
 
+type Props = {
+  params: { postId: string };
+};
+
 /**
  *
  * @param paramsにはgenerateStaticParams関数が返すpaths配列の中のこのページのpostIdが入る
- * @returns JSXElement
+ * @returns JSX
  */
-const Page = async ({
+const Page: React.FC<Props> = async ({
   // ここをparamsだけにするとpostIdは44行目のように取得することになる
   params: { postId },
-}: {
-  params: { postId: string };
-}): Promise<React.JSX.Element> => {
+}) => {
   // const { postId } = params;
   const post = await getDetail(postId);
 

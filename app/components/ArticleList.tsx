@@ -3,8 +3,6 @@ import Link from 'next/link';
 
 import { Blog } from '../../types/blog';
 
-// import { getList } from '../../libs/microcms';
-
 export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
   if (contents == null || contents.length === 0) {
     return <p></p>;

@@ -13,11 +13,9 @@ export const metadata: Metadata = {
   description: 'My Blog',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>): JSX.Element {
+type Props = { children: React.ReactNode };
+
+const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="ja">
       <body className={`${inter.variable} flex h-screen flex-col text-slate-700 antialiased`}>
@@ -26,4 +24,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

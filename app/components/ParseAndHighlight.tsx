@@ -6,7 +6,7 @@ import HighlightCode from './HighlightCode';
 const isElement = (element: unknown) => element instanceof Element;
 const isText = (text: unknown) => text instanceof Text;
 
-export default function ParseAndHighlight(rawHtml: string): string | JSX.Element | JSX.Element[] {
+export const ParseAndHighlight = (rawHtml: string): string | JSX.Element | JSX.Element[] => {
   return parse(rawHtml, {
     replace: (domNode) => {
       if (!(domNode instanceof Element)) {
@@ -28,4 +28,4 @@ export default function ParseAndHighlight(rawHtml: string): string | JSX.Element
       return <HighlightCode hlc={{ code, languageClass, dataFileName }} />;
     },
   });
-}
+};

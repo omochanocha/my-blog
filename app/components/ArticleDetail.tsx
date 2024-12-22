@@ -1,11 +1,9 @@
 import React from 'react';
 
-// import parse from 'html-react-parser';
-
 import Link from 'next/link';
 
 import styles from '../page.module.css';
-import ParseAndHighlight from './ParseAndHighlight';
+import { ParseAndHighlight } from './ParseAndHighlight';
 
 import type { Blog } from '../../types/blog';
 

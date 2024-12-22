@@ -11,9 +11,7 @@ type Props = {
   };
 };
 
-export default function HighlightCode({
-  hlc: { code, languageClass, dataFileName },
-}: Props): JSX.Element {
+const HighlightCode: React.FC<Props> = ({ hlc: { code, languageClass, dataFileName } }) => {
   // microCMSから取得したクラス名を、言語名に整形
   const language = languageClass.replace('language-', '');
   const highlightCode = language
@@ -34,4 +32,6 @@ export default function HighlightCode({
       </pre>
     </div>
   );
-}
+};
+
+export default HighlightCode;
