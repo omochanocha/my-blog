@@ -6,17 +6,18 @@ import 'highlight.js/styles/github-dark-dimmed.min.css';
 type Props = {
   hlc: {
     code: string;
-    languageClass: string;
+    language: string;
     dataFileName: string | undefined;
   };
 };
 
-const HighlightCode: React.FC<Props> = ({ hlc: { code, languageClass, dataFileName } }) => {
+const HighlightCode: React.FC<Props> = ({ hlc: { code, language, dataFileName } }) => {
   // microCMSから取得したクラス名を、言語名に整形
-  const language = languageClass.replace('language-', '');
+  // const language = languageClass.replace('language-', '');
   const highlightCode = language
     ? hljs.highlight(code, { language, ignoreIllegals: true }).value
     : hljs.highlightAuto(code).value;
+  // const highlightCode= hljs.highlight(code, { language, ignoreIllegals: true }).value;
 
   const rounded = dataFileName != null ? 'rounded-b-md rounded-se-md' : 'rounded-md';
 
@@ -28,7 +29,7 @@ const HighlightCode: React.FC<Props> = ({ hlc: { code, languageClass, dataFileNa
         </p>
       )}
       <pre className={`flex overflow-x-auto ${rounded} bg-blue-950 p-2`}>
-        <code className={languageClass}>{parse(highlightCode)}</code>
+        <code className={language}>{parse(highlightCode)}</code>
       </pre>
     </div>
   );

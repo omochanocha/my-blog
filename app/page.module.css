@@ -3,9 +3,15 @@
 /* @tailwind utilities; */
 
 @layer components {
-  :where(.prose) div {
+  .prose > * {
     margin-top: 1em;
   }
+  .prose > hr {
+    margin-top: 0.5em;
+  }
+  /* :where(.prose) div {
+    margin-top: 1em;
+  } */
   :where(.prose) h2 {
     font-size: 1.25rem;
     font-weight: bold;
@@ -17,13 +23,52 @@
   :where(.prose) h2:not(:first-child) {
     margin-top: 2rem;
   }
+  :where(.prose) h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+
+    @media (width>= 768px) {
+      font-size: 1.25rem;
+    }
+  }
+  :where(.prose) h4 {
+    font-size: 1rem;
+    font-weight: bold;
+
+    @media (width>= 768px) {
+      font-size: 1.125rem;
+    }
+  }
   :where(.prose) p {
-    margin-top: 1em;
+    /* margin-top: 1em; */
     line-height: 1.5;
   }
   :where(.prose) figure {
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    /* margin-top: 1em; */
+  }
+
+  :where(.prose) :is(ul, ol) {
+    margin-left: 1.1rem;
+    list-style-type: revert;
+  }
+
+  .prose :is(ul, ol) li {
+    /* display: block;
+    margin-right: 1em; */
+    padding-left: 0.4em;
+  }
+
+  .prose p > code {
+    background-color: #e2e8f0;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+
+  .prose blockquote {
+    padding: 4px 0 4px 24px;
+    border-left: 2px solid #94a3b8;
+    color: #9ca3af;
   }
 }

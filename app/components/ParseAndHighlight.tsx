@@ -23,9 +23,12 @@ export const ParseAndHighlight = (rawHtml: string): string | JSX.Element | JSX.E
       if (!isText(codeElement.firstChild)) return;
 
       const code = codeElement.firstChild.data;
-      const languageClass = codeElement.attribs['class'] ?? '';
 
-      return <HighlightCode hlc={{ code, languageClass, dataFileName }} />;
+      if (codeElement.attribs['class'] == null) return;
+
+      const language = codeElement.attribs['class'].replace('language-', '');
+
+      return <HighlightCode hlc={{ code, language, dataFileName }} />;
     },
   });
 };
