@@ -9,9 +9,6 @@
   .prose > hr {
     margin-top: 0.5em;
   }
-  /* :where(.prose) div {
-    margin-top: 1em;
-  } */
   :where(.prose) h2 {
     font-size: 1.25rem;
     font-weight: bold;
@@ -40,13 +37,11 @@
     }
   }
   :where(.prose) p {
-    /* margin-top: 1em; */
     line-height: 1.5;
   }
   :where(.prose) figure {
     display: flex;
     justify-content: center;
-    /* margin-top: 1em; */
   }
 
   :where(.prose) :is(ul, ol) {
@@ -55,8 +50,6 @@
   }
 
   .prose :is(ul, ol) li {
-    /* display: block;
-    margin-right: 1em; */
     padding-left: 0.4em;
   }
 
