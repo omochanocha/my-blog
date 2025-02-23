@@ -10,11 +10,14 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
 
   return (
     <div className="mt-8">
-      <ul className="mx-auto grid max-w-5xl gap-x-4 gap-y-10 md:grid-cols-3">
+      <ul className="mx-auto grid max-w-5xl gap-x-4 gap-y-10 md:grid-cols-[repeat(auto-fit,minmax(224px,1fr))]">
         {contents.map((post) => {
           return (
             <li key={post.id} className="grid">
-              <Link href={`/${post.id}`} className="">
+              <Link
+                href={`/${post.id}`}
+                className="flex items-start gap-x-3 md:flex-col md:gap-y-2"
+              >
                 <div>
                   <Image
                     src={post.eyecatch?.url ?? 'https://placehold.jp/660x346.png'}
@@ -24,7 +27,7 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
                     priority={true}
                   />
                 </div>
-                <p className="mt-2 text-slate-800">{post.title}</p>
+                <p className="text-slate-800">{post.title}</p>
               </Link>
             </li>
           );
