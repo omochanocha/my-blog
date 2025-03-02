@@ -21,7 +21,7 @@ export const generateStaticParams = async (): Promise<
     postId: string;
   }[]
 > => {
-  // generateStaticParams関数内でfetchリクエストでコンテンツを取得した場合はそのリクエストは自動的にメモ化される
+  // generateStaticParams関数内でfetchリクエストによりコンテンツを取得した場合はそのリクエストは自動的にメモ化される
   // 今回は違う
   const { contents } = await getList();
 
