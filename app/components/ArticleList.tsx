@@ -22,8 +22,8 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
                   <Image
                     src={post.eyecatch?.url ?? 'https://placehold.jp/660x346.png'}
                     alt="アイキャッチ画像"
-                    width={post.eyecatch?.width ?? 330}
-                    height={post.eyecatch?.height ?? 173}
+                    width="330"
+                    height="173"
                     priority={true}
                   />
                 </div>
