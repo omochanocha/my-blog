@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-inter), 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
-    Meiryo, Arial, sans-serif;
+  font-family: ui-sans-serif, system-ui, var(--font-inter), 'Helvetica Neue',
+    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, Arial, sans-serif;
 }
 
 @layer utilities {
@@ -12,8 +12,6 @@ body {
     text-wrap: balance;
   }
 }
-
-
 
 @layer base {
   :root {
@@ -70,8 +68,6 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
-
-
 
 @layer base {
   * {
