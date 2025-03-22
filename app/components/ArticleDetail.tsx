@@ -25,7 +25,7 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
   const utcDate_updatedAt = useMemo(() => new Date(post.updatedAt), [post.updatedAt]);
 
   return (
-    <article className="mx-auto w-full max-w-5xl grow text-zinc-800">
+    <article className="mx-auto w-full max-w-5xl grow">
       <h1 className="text-2xl font-bold md:text-3xl">{post.title}</h1>
       <div className="mt-8 flex gap-x-3 text-gray-500 md:mt-16">
         <p>{formatter.format(utcDate_createdAt)}</p>
