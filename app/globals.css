@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: ui-sans-serif, system-ui, var(--font-inter), 'Helvetica Neue',
+  font-family: var(--font-noto-sans), ui-sans-serif, system-ui, var(--font-inter), 'Helvetica Neue',
     'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, Arial, sans-serif;
 }
 
