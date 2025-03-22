@@ -27,7 +27,7 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
                     priority={true}
                   />
                 </div>
-                <p className="text-slate-800">{post.title}</p>
+                <p>{post.title}</p>
               </Link>
             </li>
           );

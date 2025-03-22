@@ -1,6 +1,7 @@
 import { Inter, Noto_Sans_JP } from 'next/font/google';
 
 import { Header } from './components/Header';
+import { ThemeProvider } from './components/Theme-provider';
 
 import type { Metadata } from 'next';
 
@@ -22,12 +23,17 @@ type Props = { children: React.ReactNode };
 
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
-    <html lang="ja">
-      <body
-        className={`${notoSans.variable} ${inter.variable} flex flex-col text-slate-700 antialiased`}
-      >
-        <Header />
-        <main className="my-12 grid grow px-4 md:justify-items-center md:px-8">{children}</main>
+    <html lang="ja" suppressHydrationWarning>
+      <body className={`${notoSans.variable} ${inter.variable} flex flex-col antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="my-12 grid grow px-4 md:justify-items-center md:px-8">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

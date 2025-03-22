@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { ModeToggle } from './ModeToggle';
+
 export const Header: React.FC = () => {
   return (
     <header className="grid h-12 w-full shrink-0 border-b border-b-zinc-600">
@@ -12,6 +14,7 @@ export const Header: React.FC = () => {
         <Link href="/articles/" className="text-center text-xl font-bold">
           Articles
         </Link>
+        <ModeToggle />
       </div>
     </header>
   );
