@@ -24,11 +24,11 @@ const HighlightCode: React.FC<Props> = ({ hlc: { code, language, dataFileName } 
   return (
     <div className="text-white">
       {dataFileName != null && (
-        <p className="flex max-w-fit rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none">
+        <p className="flex max-w-fit rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none tracking-wide">
           {dataFileName}
         </p>
       )}
-      <pre className={`flex overflow-x-auto ${rounded} bg-blue-950 p-2`}>
+      <pre className={`flex overflow-x-auto ${rounded} bg-pre p-2`}>
         <code className={language}>{parse(highlightCode)}</code>
       </pre>
     </div>

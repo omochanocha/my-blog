@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-inter), 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
-    Meiryo, Arial, sans-serif;
+  font-family: var(--font-noto-sans), ui-sans-serif, system-ui, var(--font-inter), 'Helvetica Neue',
+    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, Arial, sans-serif;
 }
 
 @layer utilities {
@@ -13,12 +13,11 @@ body {
   }
 }
 
-
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* --background: 34, 100%, 92%; */
+    --background: 33, 100%, 96%;
+    --foreground: 215, 25%, 27%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -29,7 +28,8 @@ body {
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
+    /* --accent: 210 40% 96.1%; */
+    --accent: 214 95% 93%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -42,10 +42,11 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --pre: 226, 57%, 21%;
   }
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 212, 36%, 9%;
+    --foreground: 33, 100%, 96%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
@@ -68,10 +69,9 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --pre: 197 79% 15%;
   }
 }
-
-
 
 @layer base {
   * {
