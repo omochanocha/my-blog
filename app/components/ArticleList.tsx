@@ -18,7 +18,7 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
                 href={`/${post.id}`}
                 className="flex items-start gap-x-3 md:flex-col md:gap-y-2"
               >
-                <div>
+                <div className="shrink-0 basis-40 md:shrink md:basis-full">
                   <Image
                     src={post.eyecatch?.url ?? 'https://placehold.jp/660x346.png'}
                     alt="アイキャッチ画像"
