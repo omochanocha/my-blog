@@ -24,7 +24,7 @@ const HighlightCode: React.FC<Props> = ({ hlc: { code, language, dataFileName } 
   return (
     <div className="text-white">
       {dataFileName != null && (
-        <p className="flex max-w-fit rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none">
+        <p className="flex max-w-fit rounded-t-md bg-slate-800 px-2 py-1 text-sm leading-none tracking-wide">
           {dataFileName}
         </p>
       )}
