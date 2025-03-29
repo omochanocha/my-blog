@@ -3,7 +3,7 @@ import React from 'react';
 import { PER_PAGE } from '../const';
 import { ArticleList } from './components/ArticleList';
 import { getList } from '../libs/microcms-ts';
-import { PaginationWrapper } from './components/Pagination';
+import { PaginationWrapper } from './components/PaginationWrapper';
 
 type Props = {
   // searchParams: ReadonlyURLSearchParams;
@@ -23,7 +23,7 @@ const Home: React.FC<Props> = async ({ searchParams }) => {
 
   return (
     <div className="flex flex-col justify-center">
-      <p className="text-xl font-bold">新着記事</p>
+      <p className="text-2xl font-bold">新着記事</p>
       <ArticleList contents={contents} />
       <PaginationWrapper totalCount={totalCount} currentPageNum={currentPageNum} />
     </div>

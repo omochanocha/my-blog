@@ -78,7 +78,7 @@ const Page: React.FC<Props> = async ({
 
   return (
     <div className="flex flex-col justify-center">
-      <p className="text-xl font-bold">{categoryName}</p>
+      <p className="text-2xl font-bold">{categoryName}</p>
       <ArticleList contents={contents} />
     </div>
   );
