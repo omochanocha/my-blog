@@ -23,12 +23,26 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
         {contents.map((post) => {
           return (
             <li key={post.id} className="grid gap-y-2 overflow-hidden">
-              <Link
-                href={`/${post.id}`}
-                className="flex items-start gap-x-3 hover:underline md:flex-col md:gap-y-2"
-              >
+              <Link href={`/${post.id}`} className="mr-auto hover:underline">
                 <h2 className="text-lg font-bold">{post.title}</h2>
               </Link>
+              {post.categories && post.categories.length > 0 && (
+                <ul className="flex items-center gap-x-4">
+                  {post.categories.map((category) => {
+                    return (
+                      <li key={category.id}>
+                        <Link href={`/categories/${category.id}`}>
+                          <div>
+                            <p className="rounded border border-slate-600 px-2 py-1 text-sm">
+                              {category.name}
+                            </p>
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
               <LeadingText content={post.content} />
               <div className="flex gap-x-2">
                 <p className="text-xs text-gray-500">
