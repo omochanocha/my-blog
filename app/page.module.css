@@ -3,7 +3,7 @@
 /* @tailwind utilities; */
 
 @layer components {
-  .prose > * {
+  .prose > * + * {
     margin-top: 1em;
   }
   .prose > hr {
@@ -39,10 +39,10 @@
   :where(.prose) p {
     line-height: 1.5;
   }
-  :where(.prose) figure {
+  /* :where(.prose) figure {
     display: flex;
     justify-content: center;
-  }
+  } */
 
   :where(.prose) :is(ul, ol) {
     margin-left: 1.1rem;
