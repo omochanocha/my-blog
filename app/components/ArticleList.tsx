@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { CategoryList } from './CategoryList';
 import { LeadingText } from './LeadingText';
 import { Blog } from '../../types/blog';
 
@@ -26,22 +27,8 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
               <Link href={`/${post.id}`} className="mr-auto hover:underline">
                 <h2 className="text-lg font-bold">{post.title}</h2>
               </Link>
-              {post.categories && post.categories.length > 0 && (
-                <ul className="flex items-center gap-x-4">
-                  {post.categories.map((category) => {
-                    return (
-                      <li key={category.id}>
-                        <Link href={`/categories/${category.id}`}>
-                          <div>
-                            <p className="rounded border border-slate-600 px-2 py-1 text-sm">
-                              {category.name}
-                            </p>
-                          </div>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
+              {post.categories != null && post.categories.length > 0 && (
+                <CategoryList categories={post.categories} />
               )}
               <LeadingText content={post.content} />
               <div className="flex gap-x-2">

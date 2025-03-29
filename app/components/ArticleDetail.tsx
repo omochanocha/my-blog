@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 
-import Link from 'next/link';
-
 import styles from '../page.module.css';
+import { CategoryList } from './CategoryList';
 import { ParseAndHighlight } from './ParseAndHighlight';
 
 import type { Blog } from '../../types/blog';
@@ -27,28 +26,14 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
   return (
     <article className="mx-auto w-full max-w-5xl grow">
       <h1 className="text-2xl font-bold md:text-3xl">{post.title}</h1>
-      <div className="mt-8 flex gap-x-3 text-gray-500 md:mt-16">
+      <div className="mt-8 flex gap-x-3 text-gray-500">
         <p>{formatter.format(utcDate_createdAt)}</p>
         <p>更新：{formatter.format(utcDate_updatedAt)}</p>
       </div>
-      {post.categories && (
-        <ul className="mt-3 flex items-center gap-x-4">
-          {post.categories.map((category) => {
-            return (
-              <li key={category.id}>
-                <Link href={`/categories/${category.id}`}>
-                  <div>
-                    <p className="rounded border border-slate-600 px-2 py-1 text-sm">
-                      {category.name}
-                    </p>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+      {post.categories != null && post.categories.length > 0 && (
+        <CategoryList categories={post.categories} />
       )}
-      <div className={`${styles['prose']} mt-14 md:mt-20`}>{ParseAndHighlight(post.content)}</div>
+      <div className={`${styles['prose']} mt-14`}>{ParseAndHighlight(post.content)}</div>
     </article>
   );
 };

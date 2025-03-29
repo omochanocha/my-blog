@@ -3,7 +3,7 @@
 /* @tailwind utilities; */
 
 @layer components {
-  .prose > * {
+  .prose > * + * {
     margin-top: 1em;
   }
   .prose > hr {
