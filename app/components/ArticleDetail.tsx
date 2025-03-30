@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import styles from '../page.module.css';
 import { CategoryList } from './CategoryList';

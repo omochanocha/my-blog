@@ -1,10 +1,8 @@
-import { FC } from 'react';
-
 import { getList } from '@/libs/microcms-ts';
 
 import { ArticleList } from '../components/ArticleList';
 
-const Page: FC = async () => {
+const Page: React.FC = async () => {
   const { contents } = await getList();
   return (
     <>

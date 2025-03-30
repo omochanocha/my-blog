@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { PER_PAGE } from '../const';
 import { ArticleList } from './components/ArticleList';
 import { getList } from '../libs/microcms-ts';
