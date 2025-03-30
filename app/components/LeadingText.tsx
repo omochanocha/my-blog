@@ -1,8 +1,6 @@
-import { FC } from 'react';
-
 const MAX_LENGTH = 200;
 
-export const LeadingText: FC<{ content: string }> = ({ content }) => {
+export const LeadingText: React.FC<{ content: string }> = ({ content }) => {
   const withoutPreCode = content.replace(/<(?:pre|code)[^>]*>[\s\S]*?<\/(?:pre|code)>/gi, '');
   const textOnly = withoutPreCode.replace(/<[^>]+>/g, '');
 

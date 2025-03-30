@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import {
   Pagination,
   PaginationContent,
@@ -13,7 +11,7 @@ type Props = {
   currentPageNum: number;
 };
 
-export const PaginationWrapper: FC<Props> = ({ totalCount, currentPageNum }) => {
+export const PaginationWrapper: React.FC<Props> = ({ totalCount, currentPageNum }) => {
   const range = (start: number, end: number): number[] => {
     // return [...Array(end - start + 1)].map((_, i) => start + i);のようにスプレッド構文だとArray(end - start + 1)がany型になりエラーになる
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
