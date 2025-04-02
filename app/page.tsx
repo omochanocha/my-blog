@@ -19,11 +19,17 @@ const Home: React.FC<Props> = async ({ searchParams }) => {
     limit: PER_PAGE,
   });
 
+  // const { contents: contents_categories } = await getListCategories();
+
   return (
     <div className="flex flex-col justify-center">
       <p className="text-2xl font-bold">新着記事</p>
       <ArticleList contents={contents} />
       <PaginationWrapper totalCount={totalCount} currentPageNum={currentPageNum} />
+      {/* <p className="text-2xl font-bold">カテゴリー</p>
+      {contents_categories.map((category) => (
+        <p key={category.id}>{category.name}</p>
+      ))} */}
     </div>
   );
 };
