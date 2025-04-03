@@ -31,7 +31,9 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
         <p>更新：{formatter.format(utcDate_updatedAt)}</p>
       </div>
       {post.categories != null && post.categories.length > 0 && (
-        <CategoryList categories={post.categories} />
+        <div className="mt-3">
+          <CategoryList categories={post.categories} />
+        </div>
       )}
       <div className={`${styles['prose']} mt-14`}>{ParseAndHighlight(post.content)}</div>
     </article>
