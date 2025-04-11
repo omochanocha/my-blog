@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { CategoryList } from './CategoryList';
 import { LeadingText } from './LeadingText';
-import { Blog } from '../../types/blog';
+import { type Blog } from '../../types/blog';
 
 const options = {
   timeZone: 'Asia/Tokyo',

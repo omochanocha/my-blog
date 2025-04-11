@@ -27,6 +27,8 @@ export default [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:jsx-a11y/recommended',
     'plugin:tailwindcss/recommended',
     'prettier',
@@ -58,10 +60,18 @@ export default [
       'no-var': 'error',
       'sort-imports': 0,
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': ['off'],
+      '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'warn',
-      '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/no-misused-promises': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'error',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+      '@typescript-eslint/consistent-type-imports': [
+        'warn',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'inline-type-imports',
+        },
+      ],
 
       'import/order': [
         'error',
