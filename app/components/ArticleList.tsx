@@ -14,9 +14,7 @@ const options = {
 const formatter = new Intl.DateTimeFormat('ja-JP', options);
 
 export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
-  if (contents == null || contents.length === 0) {
-    return <p></p>;
-  }
+  if (contents == null || contents.length === 0) return;
 
   return (
     <div className="mt-8">

@@ -11,10 +11,8 @@ const isText = (text: unknown) => text instanceof Text;
 export const ParseAndHighlight = (rawHtml: string): string | JSX.Element | JSX.Element[] => {
   return parse(rawHtml, {
     replace: (domNode) => {
-      if (!isElement(domNode)) {
-        // コードブロックじゃない場合はそのまま
-        return;
-      }
+      // コードブロックじゃない場合はそのまま
+      if (!isElement(domNode)) return;
 
       // aタグの処理
       if (domNode.name === 'a') {
