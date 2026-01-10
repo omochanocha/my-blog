@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Category } from '@/types/blog';
+import { type Category } from '@/types/blog';
 
 export const CategoryList: React.FC<{ categories: Category[] }> = ({ categories }) => {
   return (

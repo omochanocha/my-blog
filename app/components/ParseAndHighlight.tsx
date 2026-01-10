@@ -11,15 +11,14 @@ const isText = (text: unknown) => text instanceof Text;
 export const ParseAndHighlight = (rawHtml: string): string | JSX.Element | JSX.Element[] => {
   return parse(rawHtml, {
     replace: (domNode) => {
-      if (!(domNode instanceof Element)) {
-        // コードブロックじゃない場合はそのまま
-        return;
-      }
+      // コードブロックじゃない場合はそのまま
+      if (!isElement(domNode)) return;
 
       // aタグの処理
       if (domNode.name === 'a') {
+        if (domNode.attribs['href'] == null) return;
         // httpが含まれる場合は触らない
-        if (domNode.attribs['href']?.indexOf('http') !== -1) {
+        if (domNode.attribs['href']?.includes('http')) {
           return;
         }
         // それ以外はLinkタグに置き換える。
