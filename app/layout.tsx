@@ -32,7 +32,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           disableTransitionOnChange
         >
           <Header />
-          <main className="my-12 grid grow px-4 md:mx-auto md:w-full md:max-w-5xl md:px-8">
+          <main className="my-12 grid grow grid-cols-1 px-4 md:mx-auto md:w-full md:max-w-5xl md:px-8">
             {children}
           </main>
         </ThemeProvider>
