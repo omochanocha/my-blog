@@ -31,7 +31,7 @@ export const ArticleList: React.FC<{ contents: Blog[] }> = ({ contents }) => {
               <LeadingText content={post.content} />
               <div className="flex gap-x-2">
                 <p className="text-xs text-gray-500">
-                  公開日 : {formatter.format(new Date(post.createdAt))}
+                  公開日 : {formatter.format(new Date(post.publishedAt ?? post.createdAt))}
                 </p>
                 <p className="text-xs text-gray-500">
                   更新日 : {formatter.format(new Date(post.updatedAt))}
