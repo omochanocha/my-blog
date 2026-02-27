@@ -17,6 +17,7 @@ const Home: React.FC<Props> = async ({ searchParams }) => {
   const { contents, totalCount } = await getList({
     offset: (currentPageNum - 1) * PER_PAGE,
     limit: PER_PAGE,
+    orders: '-publishedAt',
   });
 
   // const { contents: contents_categories } = await getListCategories();
