@@ -1,3 +1,4 @@
+import hljs from 'highlight.js/lib/common';
 import parse, { domToReact, Element, Text } from 'html-react-parser';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -42,6 +43,14 @@ export const ParseAndHighlight = (rawHtml: string): string | JSX.Element | JSX.E
         );
       }
 
+      // インラインコードの処理
+      if (domNode.name === 'code') {
+        if (!isText(domNode.firstChild)) return;
+        const code = domNode.firstChild.data;
+
+        return <code>{parse(hljs.highlightAuto(code).value)}</code>;
+      }
+
       // コードブロックの処理
       const dataFileName = domNode.attribs['data-filename'];
       if (!isElement(domNode.firstChild)) return;
@@ -51,6 +60,7 @@ export const ParseAndHighlight = (rawHtml: string): string | JSX.Element | JSX.E
 
       if (codeElement.attribs['class'] != null) {
         const code = codeElement.firstChild.data;
+        // console.log(code);
 
         if (codeElement.attribs['class'] == null) return;
 
