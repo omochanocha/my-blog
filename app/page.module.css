@@ -55,7 +55,7 @@
 
   .prose p > code {
     /* background-color: #e2e8f0; */
-    @apply bg-primary text-card;
+    @apply bg-input;
     margin: 0 0.2em;
     padding: 0.2em 0.4em;
     border-radius: 4px;
