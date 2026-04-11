@@ -66,4 +66,13 @@
     border-left: 2px solid #94a3b8;
     color: #9ca3af;
   }
+
+  :global(.dark) .prose a {
+    @apply text-indigo-400;
+  }
+
+  .prose a {
+    @apply text-purple-600;
+    border-bottom: 1px solid;
+  }
 }
