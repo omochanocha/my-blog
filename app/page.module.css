@@ -68,11 +68,11 @@
   }
 
   :global(.dark) .prose a {
-    @apply text-indigo-400;
+    @apply text-indigo-400 border-indigo-400;
   }
 
   .prose a {
-    @apply text-purple-600;
-    border-bottom: 1px solid;
+    display: inline;
+    @apply text-purple-600 border-b border-purple-600;
   }
 }
