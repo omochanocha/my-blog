@@ -6,10 +6,10 @@ export const LeadingText: React.FC<{ content: string }> = ({ content }) => {
   const textOnly = withoutPreCode
     .replace(/<[^>]+>/g, '')
     .replace(/&quot;/g, '"')
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
-    .replace(/&nbsp;/g, ' ');
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&');
 
   const trimmedText = textOnly.trim();
   const leadingText =
