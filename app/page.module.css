@@ -70,11 +70,18 @@
   }
 
   :global(.dark) .prose a {
-    @apply text-indigo-400 border-indigo-400;
+    @apply text-cyan-300 border-cyan-300;
+
+    &:hover {
+      @apply text-cyan-300/80;
+    }
   }
 
   .prose a {
     display: inline;
-    @apply text-purple-600 border-b border-purple-600;
+    @apply text-cyan-500 border-b border-cyan-500 transition-colors duration-300;
+    &:hover {
+      @apply border-transparent text-cyan-500/80;
+    }
   }
 }
