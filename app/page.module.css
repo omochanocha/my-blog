@@ -10,8 +10,10 @@
     margin-top: 0.5em;
   }
   :where(.prose) h2 {
+    scroll-margin-top: 1.5rem;
     font-size: 1.25rem;
     font-weight: bold;
+    @apply pb-1 border-b-2 border-secondary;
 
     @media (width>= 768px) {
       font-size: 1.5rem;
