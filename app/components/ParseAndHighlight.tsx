@@ -1,13 +1,11 @@
 import hljs from 'highlight.js/lib/common';
-import parse, { domToReact, Element, Text } from 'html-react-parser';
+import parse, { domToReact, type Element, type Text } from 'html-react-parser';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import HighlightCode from './HighlightCode';
+import { isElement, isText } from '@/libs/typeGuard';
 
-// 型ガード関数
-const isElement = (element: unknown) => element instanceof Element;
-const isText = (text: unknown) => text instanceof Text;
+import HighlightCode from './HighlightCode';
 
 export const ParseAndHighlight = (rawHtml: string): string | JSX.Element | JSX.Element[] => {
   return parse(rawHtml, {

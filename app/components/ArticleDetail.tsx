@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import styles from '../page.module.css';
 import { CategoryList } from './CategoryList';
 import { ParseAndHighlight } from './ParseAndHighlight';
+import { Toc } from './Toc';
 
 import type { Blog } from '../../types/blog';
 
@@ -38,7 +39,10 @@ export const ArticleDetail: React.FC<Props> = ({ post }) => {
           <CategoryList categories={post.categories} />
         </div>
       )}
-      <div className={`${styles['prose']} mt-14`}>{ParseAndHighlight(post.content)}</div>
+      <div className="gap-x-10 md:grid md:grid-cols-[calc(100%-200px-2.5rem),200px]">
+        <Toc rawHtml={post.content} />
+        <div className={`${styles['prose']} mt-14`}>{ParseAndHighlight(post.content)}</div>
+      </div>
     </article>
   );
 };
