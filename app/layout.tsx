@@ -15,8 +15,8 @@ const notoSans = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: 'My Blog',
-  description: 'My Blog',
+  title: 'Blog',
+  description: 'Blog',
 };
 
 type Props = { children: React.ReactNode };
