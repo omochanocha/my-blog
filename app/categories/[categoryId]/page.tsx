@@ -47,7 +47,10 @@ const Page: React.FC<Props> = async ({
   params: { categoryId },
 }) => {
   // const { categoryId } = params;
-  const { contents } = await getList({ filters: `categories[contains]${categoryId}` });
+  const { contents } = await getList({
+    filters: `categories[contains]${categoryId}`,
+    orders: '-publishedAt',
+  });
 
   if (contents == null || contents.length === 0) {
     notFound();
