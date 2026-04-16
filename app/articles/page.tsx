@@ -3,7 +3,9 @@ import { getList } from '@/libs/microcms-ts';
 import { ArticleList } from '../components/ArticleList';
 
 const Page: React.FC = async () => {
-  const { contents } = await getList();
+  const { contents } = await getList({
+    orders: '-publishedAt',
+  });
   return (
     <>
       <div>
