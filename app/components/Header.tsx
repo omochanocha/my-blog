@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
       <div className="relative mx-auto flex w-full max-w-5xl items-center justify-between gap-x-2 px-4 md:pl-4 md:pr-16">
         <div className="left-10 grid grow md:grow-0">
           <Link href="/" className="text-2xl font-bold  md:text-3xl">
-            My Blog
+            Blog
           </Link>
         </div>
         <Link href="/articles/" className="text-center text-xl font-bold">
