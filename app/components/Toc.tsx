@@ -13,7 +13,7 @@ export function Toc({ rawHtml }: { rawHtml: string }): JSX.Element {
   if (headingList.length === 0) return <></>;
 
   return (
-    <aside className="mt-14 self-start [grid-area:1/2/2/3] md:sticky md:top-4 md:mt-0">
+    <aside className="mt-14 self-start [grid-area:1/2/2/3] md:sticky md:top-20 md:mt-0">
       <p className="border-l-2 border-muted-foreground pl-2 text-sm">目次</p>
       <ul className="mt-3 grid gap-y-1">
         {headingList.map((heading, idx) => (
