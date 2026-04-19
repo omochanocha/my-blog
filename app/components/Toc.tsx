@@ -9,7 +9,6 @@ type HeadingList = {
 
 export function Toc({ rawHtml }: { rawHtml: string }): JSX.Element {
   const headingList = getHeadingList(rawHtml);
-  console.log(headingList);
 
   if (headingList.length === 0) return <></>;
 
