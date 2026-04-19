@@ -31,6 +31,15 @@ export function Toc({ rawHtml }: { rawHtml: string }): JSX.Element {
   );
 }
 
+/**
+ * h2が`<h2><em>斜体<strong>太字</strong></em></h2>`のように子要素を持っていたとしても、子要素のテキストのみを再帰的に抽出して一つの文字列になるようにする関数
+ */
+function extractText(node: unknown): string {
+  if (isText(node)) return node.data;
+  if (isElement(node)) return node.children.map(extractText).join('');
+  return '';
+}
+
 export function getHeadingList(rawHtml: string): HeadingList {
   const headingList: HeadingList = [];
 
@@ -39,11 +48,10 @@ export function getHeadingList(rawHtml: string): HeadingList {
       if (!isElement(domNode)) return;
 
       if (domNode.name === 'h2') {
-        if (!isText(domNode.firstChild)) return;
-
+        // console.log(domNode.children.map(extractText).join(''));
         headingList.push({
           id: domNode.attribs['id'] ?? '',
-          text: domNode.firstChild.data,
+          text: domNode.children.map(extractText).join(''),
         });
       }
     },
