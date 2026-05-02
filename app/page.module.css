@@ -4,7 +4,7 @@
 
 @layer components {
   .prose > * + * {
-    margin-top: 1em;
+    margin-top: 1.1em;
   }
   .prose > hr {
     margin-top: 0.5em;
@@ -46,13 +46,15 @@
     justify-content: center;
   } */
 
-  :where(.prose) :is(ul, ol) {
+  .prose :is(ul, ol) {
+    margin-block: 1.7em;
     margin-left: 1.1rem;
     list-style-type: revert;
   }
 
   .prose :is(ul, ol) li {
     padding-left: 0.4em;
+    padding-block: 0.5em;
   }
 
   .prose p > code {
