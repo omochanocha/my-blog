@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Inter, Noto_Sans_JP } from 'next/font/google';
 
 import { Header } from './components/Header';
@@ -37,6 +38,9 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           </main>
         </ThemeProvider>
       </body>
+      {process.env['NEXT_PUBLIC_GOOGLE_ANALYTICS_ID'] != null && (
+        <GoogleAnalytics gaId={process.env['NEXT_PUBLIC_GOOGLE_ANALYTICS_ID']} />
+      )}
     </html>
   );
 };
