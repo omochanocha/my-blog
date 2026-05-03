@@ -51,6 +51,7 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
         pre: 'hsl(var(--pre))',
+        h2Border: 'hsl(var(--h2Border))',
       },
       borderRadius: {
         lg: 'var(--radius)',

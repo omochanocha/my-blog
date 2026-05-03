@@ -13,7 +13,7 @@
     scroll-margin-top: 1.5rem;
     font-size: 1.25rem;
     font-weight: bold;
-    @apply pb-1 border-b-2 border-secondary;
+    @apply pb-3 border-b-2 border-h2Border;
 
     @media (width>= 768px) {
       font-size: 1.5rem;
