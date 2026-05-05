@@ -57,7 +57,7 @@
     padding-block: 0.5em;
   }
 
-  .prose p > code {
+  .prose :is(p, div, li, span) > code {
     /* background-color: #e2e8f0; */
     @apply bg-input;
     margin: 0 0.2em;
