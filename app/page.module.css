@@ -33,6 +33,11 @@
     @media (width>= 768px) {
       font-size: 1.25rem;
     }
+
+    /* h2の直後のh3には以下を当てる */
+    &:is(h2 + *) {
+      margin-top: 1.5rem;
+    }
   }
   :where(.prose) h4 {
     font-size: 1rem;
