@@ -4,7 +4,7 @@
 
 @layer components {
   .prose > * + * {
-    margin-top: 1.1em;
+    margin-top: 0.4em;
   }
   .prose > hr {
     margin-top: 0.5em;
