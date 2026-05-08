@@ -79,6 +79,10 @@
     @apply bg-background text-foreground;
     font-family: var(--font-noto-sans), ui-sans-serif, system-ui, var(--font-inter),
       'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, Arial, sans-serif;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-break: strict;
+
     a {
       display: inline-block;
     }
