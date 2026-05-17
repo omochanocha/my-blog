@@ -50,6 +50,10 @@
   :where(.prose) p {
     line-height: 1.5;
   }
+  .prose p:has(:global(.space)) {
+    margin-top: 2rem;
+  }
+
   /* :where(.prose) figure {
     display: flex;
     justify-content: center;
