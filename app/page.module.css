@@ -78,6 +78,10 @@
     border-radius: 4px;
   }
 
+  .prose :global(.text-white) {
+    margin-block: 2rem;
+  }
+
   .prose blockquote {
     padding: 4px 0 4px 24px;
     border-left: 2px solid #94a3b8;
