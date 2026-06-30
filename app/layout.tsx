@@ -1,5 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Inter, Noto_Sans_JP } from 'next/font/google';
+import { Noto_Sans_JP } from 'next/font/google';
 
 import { Header } from './components/Header';
 import { ThemeProvider } from './components/Theme-provider';
@@ -8,11 +8,12 @@ import type { Metadata } from 'next';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+// const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const notoSans = Noto_Sans_JP({
   subsets: ['latin'],
   variable: '--font-noto-sans',
   display: 'swap',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ type Props = { children: React.ReactNode };
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${notoSans.variable} ${inter.variable} flex flex-col antialiased`}>
+      <body className={`${notoSans.variable} flex flex-col antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
